@@ -7,27 +7,7 @@ import { FormsModule } from "@angular/forms";
 @Component({
   selector: "app-home",
   imports: [HousingLocation, FormsModule],
-  template: `
-    <section>
-      <form (ngSubmit)="filterResults(filter.value)">
-        <input type="text" placeholder="Filter by city" #filter />
-        <button
-          class="primary"
-          type="button"
-          (click)="filterResults(filter.value)"
-        >
-          Search
-        </button>
-      </form>
-    </section>
-    <section class="results">
-      @for(HousingLocation of filteredLocationList; track $index){
-      <app-housing-location
-        [housingLocation]="HousingLocation"
-      ></app-housing-location>
-      }
-    </section>
-  `,
+  templateUrl: "./home.html",
   styleUrls: ["./home.css"],
 })
 export class Home {
